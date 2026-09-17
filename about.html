@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Ledgerly Global Tax and Finance Advisory</title>
+    <style>
+        :root {
+            --primary: #0f2c59;
+            --secondary: #d4af37;
+            --light-bg: #f8f9fa;
+            --text-dark: #222222;
+            --text-light: #555555;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0f2c59; /* Solid Navy */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: inherit;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(rgba(15, 44, 89, 0.88), rgba(15, 44, 89, 0.88)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: #fff;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto;
+            color: #d0dbe7;
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Values Grid */
+        .values-section {
+            background-color: var(--light-bg);
+            padding: 4rem 2rem;
+        }
+
+        .values-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--secondary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .value-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #081a35;
+            color: #888;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid, .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Ledgerly Global Tax and Finance Advisory</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="business-tax.html">Business Tax</a></li>
+                    <li><a href="cross-border.html">Cross-Border</a></li>
+                    <li><a href="payroll.html">Payroll Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <h1>About Ledgerly Global Tax and Finance Advisory</h1>
+        <p>Your trusted partner in cross-border tax compliance, accounting, and financial structuring across the UK, Australia, and Sri Lanka.</p>
+    </section>
+
+    <!-- Main About Content -->
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Cross-Border Expertise You Can Count On</h2>
+                <p>At Ledgerly Global Tax and Finance Advisory (LGTFA Ltd), we specialize in navigating the complexities of international taxation and accounting. Whether you are an expanding UK enterprise, a cross-border investor, or a non-domiciled individual, our team brings multi-jurisdictional clarity to your financial strategy.</p>
+                <p>We bridge the gap between tax authorities across the UK (HMRC), Australia (ATO), and Sri Lanka (IRD), ensuring full statutory compliance while optimizing your global tax liabilities through double taxation relief and tailored advisory.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=800&q=80" alt="Financial Planning and Advisory">
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Values Section -->
+    <section class="values-section">
+        <div class="values-container">
+            <h2 style="text-align: center; color: var(--primary);">Why Work With Us</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Multi-Jurisdictional Focus</h3>
+                    <p>We understand the nuanced tax treaties, residency rules, and reporting requirements across the UK, Australia, and Sri Lanka.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Transparent Fixed Fees</h3>
+                    <p>No unexpected bills. We offer fixed pricing structures across our bookkeeping, corporate tax, payroll, and advisory services.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Client-Centric Strategy</h3>
+                    <p>Every business and personal tax portfolio is unique. We build long-term relationships through tailored advisory and proactive support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 LGTFA Ltd - Tax Experts. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
