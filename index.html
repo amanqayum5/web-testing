@@ -1,340 +1,962 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ledgerly Global Tax and Finance Advisory</title>
-    <style>
-        :root {
-            --primary: #0f2c59;
-            --secondary: #d4af37;
-            --light-bg: #f8f9fa;
-            --text-dark: #222222;
-            --text-light: #555555;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <!-- SEO Meta -->
+  <title>Ledgerly Global Tax & Finance Advisory | UK, Australia & Sri Lanka</title>
+  <meta name="description" content="LGTFA Ltd — specialist cross-border tax advisory, compliance, and structuring across the UK, Australia, and Sri Lanka. Book a consultation today." />
+  <meta name="robots" content="index, follow" />
 
-        body {
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: #ffffff;
-        }
+  <!-- Open Graph (LinkedIn / social sharing) -->
+  <meta property="og:title" content="Ledgerly Global Tax & Finance Advisory" />
+  <meta property="og:description" content="Cross-border tax experts across UK, Australia & Sri Lanka." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ledgerlyglobal.com/" />
+  <!-- Replace with your actual OG image -->
+  <meta property="og:image" content="https://www.ledgerlyglobal.com/assets/og-image.jpg" />
 
-        /* Header & Navigation */
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.ledgerlyglobal.com/" />
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
+  <!-- Google Fonts: Inter (cross-platform, professional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-        .logo {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #0f2c59; /* Solid Navy for the entire logo */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-}
+  <style>
+    /* =============================================
+       CSS CUSTOM PROPERTIES
+    ============================================= */
+    :root {
+      --primary:        #0f2c59;
+      --primary-dark:   #081a35;
+      --secondary:      #d4af37;
+      --secondary-dark: #b89528;
+      --light-bg:       #f4f6f9;
+      --text-dark:      #1a1a2e;
+      --text-light:     #555e6d;
+      --white:          #ffffff;
+      --radius:         8px;
+      --shadow-sm:      0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md:      0 6px 20px rgba(0,0,0,0.10);
+      --transition:     0.3s ease;
+      --max-width:      1200px;
+    }
 
-.logo span {
-    color: inherit; /* Forces the span to use the exact same Navy color */
-}
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        nav a:hover {
-            color: var(--secondary);
-        }
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-dark);
+      line-height: 1.7;
+      background-color: var(--white);
+    }
 
-        /* Hero Section with Image Background */
-        .hero {
-            background: linear-gradient(rgba(15, 44, 89, 0.85), rgba(15, 44, 89, 0.85)), 
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            color: #fff;
-            padding: 6rem 2rem;
-            text-align: center;
-        }
+    /* Accessible focus ring for keyboard users */
+    :focus-visible {
+      outline: 3px solid var(--secondary);
+      outline-offset: 3px;
+    }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            color: #d0dbe7;
-        }
+    /* =============================================
+       SKIP LINK (Accessibility)
+    ============================================= */
+    .skip-link {
+      position: absolute;
+      top: -50px;
+      left: 1rem;
+      background: var(--secondary);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      z-index: 9999;
+      transition: top var(--transition);
+    }
+    .skip-link:focus {
+      top: 1rem;
+    }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: #fff;
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
+    /* =============================================
+       TRUST / CREDENTIALS BAR
+    ============================================= */
+    .trust-bar {
+      background-color: var(--primary-dark);
+      color: #a8b8cc;
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 0.45rem 1rem;
+      letter-spacing: 0.4px;
+    }
+    .trust-bar strong {
+      color: var(--secondary);
+    }
 
-        .btn:hover {
-            background-color: #b89528;
-        }
+    /* =============================================
+       HEADER & NAV
+    ============================================= */
+    header {
+      background-color: var(--white);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        /* Services Grid Section */
-        .container {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
 
-        .section-title {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 2.5rem;
-            text-align: center;
-        }
+    /* Logo */
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      line-height: 1.2;
+    }
+    .logo .logo-accent {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: var(--secondary);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
+    /* Nav links */
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.6rem;
+      align-items: center;
+    }
 
-        .service-card {
-            background: #fff;
-            padding: 2rem 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-            display: flex;
-            flex-direction: column;
-            border-top: 4px solid var(--secondary);
-        }
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 0.9rem;
+      position: relative;
+      padding-bottom: 2px;
+      transition: color var(--transition);
+    }
 
-        .card-img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 20px;
-        }
+    /* Animated underline on hover */
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: width var(--transition);
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
 
-        .service-card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
+    /* CTA in nav */
+    .nav-cta {
+      background-color: var(--secondary);
+      color: var(--white) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius);
+      font-weight: 600 !important;
+      transition: background var(--transition) !important;
+    }
+    .nav-cta:hover {
+      background-color: var(--secondary-dark) !important;
+    }
+    .nav-cta::after {
+      display: none !important;
+    }
 
-        .service-card p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
+    /* Hamburger (mobile) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--primary);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-        .service-card a.learn-more {
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      background:
+        linear-gradient(rgba(10, 30, 65, 0.88), rgba(10, 30, 65, 0.88)),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80')
+        center / cover no-repeat;
+      color: var(--white);
+      padding: 7rem 2rem;
+      text-align: center;
+    }
 
-        .service-card a.learn-more:hover {
-            color: var(--primary);
-            text-decoration: underline;
-        }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      border: 1px solid rgba(212,175,55,0.4);
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+    }
 
-        /* Contact Section */
-        .contact {
-            background-color: var(--primary);
-            color: #fff;
-            padding: 5rem 2rem;
-        }
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.5px;
+    }
 
-        .contact-container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      color: #c5d5e8;
+      line-height: 1.8;
+    }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background var(--transition), transform 0.15s ease, box-shadow var(--transition);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .btn-primary {
+      background-color: var(--secondary);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background-color: var(--secondary-dark);
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    .btn-outline:hover {
+      background-color: rgba(255,255,255,0.1);
+      border-color: var(--white);
+    }
 
-        .form-group input, 
-        .form-group select, 
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
+    /* =============================================
+       SECTION SHARED
+    ============================================= */
+    .section {
+      padding: 5rem 2rem;
+    }
+    .section-light {
+      background-color: var(--light-bg);
+    }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .section-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 0.6rem;
+      text-align: center;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      text-align: center;
+      letter-spacing: -0.3px;
+    }
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-light);
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+    }
 
-        /* Footer */
-        footer {
-            background-color: #081a35;
-            color: #888;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-        }
+    /* =============================================
+       SERVICES GRID
+    ============================================= */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
 
-        /* Responsive Layout */
-        @media (max-width: 992px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 576px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-top: 4px solid var(--secondary);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 165px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .service-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+      line-height: 1.7;
+    }
+
+    .learn-more {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap var(--transition), color var(--transition);
+    }
+    .learn-more:hover {
+      color: var(--primary);
+      gap: 8px;
+    }
+
+    /* =============================================
+       STATS / TRUST ROW
+    ============================================= */
+    .stats-section {
+      background-color: var(--primary);
+      padding: 3.5rem 2rem;
+    }
+    .stats-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-item {
+      color: var(--white);
+    }
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--secondary);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: #8faac5;
+      letter-spacing: 0.5px;
+    }
+
+    /* =============================================
+       CONTACT SECTION
+    ============================================= */
+    .contact {
+      background-color: var(--primary);
+      padding: 5rem 2rem;
+    }
+
+    .contact-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .contact-info p {
+      color: #8faac5;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      color: #8faac5;
+      font-size: 0.9rem;
+    }
+    .contact-detail strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.85rem;
+      margin-bottom: 2px;
+    }
+    .contact-icon {
+      font-size: 1.1rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* Form */
+    .contact-form-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2.5rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #c5d5e8;
+      letter-spacing: 0.3px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      color: var(--white);
+      font-family: inherit;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--secondary);
+      background: rgba(255,255,255,0.12);
+    }
+    .form-group select option {
+      background: var(--primary-dark);
+      color: var(--white);
+    }
+
+    .btn-submit {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background-color: var(--primary-dark);
+    }
+
+    .footer-top {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3.5rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .footer-brand .logo {
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .footer-brand p {
+      color: #6b7f96;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 1.1rem;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 0.6rem;
+    }
+    .footer-col ul li a {
+      color: #6b7f96;
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color var(--transition);
+    }
+    .footer-col ul li a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      padding: 1.4rem 2rem;
+      color: #4a5a6a;
+      font-size: 0.82rem;
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .hamburger {
+        display: flex;
+      }
+      nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        box-shadow: var(--shadow-md);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition);
+      }
+      nav.open {
+        max-height: 500px;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 2rem;
+      }
+      nav ul li {
+        border-bottom: 1px solid #f0f0f0;
+        padding: 0.7rem 0;
+        width: 100%;
+      }
+      nav ul li:last-child {
+        border-bottom: none;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .nav-container {
+        flex-wrap: wrap;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Ledgerly Global Tax and <span>Finance Advisory</span></a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="business-tax.html">Business/Finance</a></li>
-                    <li><a href="sl-tax.html">Sri Lanka Tax</a></li>
-                    <li><a href="uk-sl-advice.html">UK Tax Advice</a></li>
-                    <li><a href="Payroll.html">Payroll Services</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <!-- Skip Navigation (Accessibility) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Cross-Border Tax Advisory</h1>
-        <p>Specialized tax advisory, compliance, and structuring across the UK, Australia, and Sri Lanka.</p>
-        <a href="#contact" class="btn">Schedule a Consultation</a>
+  <!-- Trust / Credentials Bar -->
+  <div class="trust-bar" role="banner" aria-label="Credentials">
+    <strong>Specialist Tax Advisors</strong> &nbsp;|&nbsp; UK &middot; Australia &middot; Sri Lanka 
+    &nbsp;|&nbsp; HMRC Registered &nbsp;&middot;&nbsp; IRD Compliant &nbsp;&middot;&nbsp; ATO Recognised
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo" aria-label="Ledgerly Global Tax and Finance Advisory - Home">
+        Ledgerly Global
+        <span class="logo-accent">Tax &amp; Finance Advisory</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="business-tax.html">Business &amp; Finance</a></li>
+          <li><a href="sl-tax.html">Sri Lanka Tax</a></li>
+          <li><a href="uk-sl-advice.html">UK Tax Advice</a></li>
+          <li><a href="Payroll.html">Payroll</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#contact" class="nav-cta">Consult Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="main-content">
+    <section class="hero" aria-label="Hero banner">
+      <span class="hero-eyebrow">Trusted Cross-Border Experts</span>
+      <h1>International Tax Advisory,<br>Structured for You</h1>
+      <p>Specialist tax advisory, compliance, and cross-border structuring across the UK, Australia, and Sri Lanka — for individuals, businesses, and expats.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+        <a href="about.html" class="btn btn-outline">Learn About Us</a>
+      </div>
     </section>
 
-    <!-- Services Grid -->
-    <div class="container">
-        <h2 class="section-title">Our Specialist Services</h2>
-        <div class="services-grid">
-            
-            <!-- Card 1 -->
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Tax and Accounting Services for Businesses" class="card-img">
-                <h3>Tax & Accounting Services for Businesses</h3>
-                <p>LGTFA Ltd supports businesses by preparing financial statements and returns, bookkeeping and processing payroll across UK, AUS, and Sri Lanka.</p>
-                <a href="business-tax.html" class="learn-more">Learn more &rarr;</a>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="UK, AUS & Sri Lanka Cross-Border Advice" class="card-img">
-                <h3>UK, AUS & Sri Lanka Cross-Border Advice</h3>
-                <p>LGTFA Ltd provides cross-border tax advice to individuals, businesses, trusts and estates navigating tax agreements between UK, Australia, and Sri Lanka.</p>
-                <a href="cross-border.html" class="learn-more">Learn more &rarr;</a>
-            </div>
-
-           <!-- Card 3: UK & SL Advice -->
-<div class="service-card">
-    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Sri Lanka and UK Tax Advice" class="card-img">
-    <h3>Sri Lanka & UK Tax Advice</h3>
-    <p>LGTFA Ltd provides specialist tax advice to UK and Sri Lankan residents, non-domiciled individuals, and expats living abroad.</p>
-    <a href="uk-sl-advice.html" class="learn-more">Learn more &rarr;</a>
-</div>
-
-            <!-- Card 4 -->
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=800&q=80" alt="Multi-Jurisdiction Tax Returns" class="card-img">
-                <h3>Multi-Jurisdiction Tax Returns</h3>
-                <p>LGTFA Ltd prepares and lodges statutory tax returns with the Inland Revenue Department (IRD), ATO, and HMRC seamlessly.</p>
-                <a href="tax-returns.html" class="learn-more">Learn more &rarr;</a>
-            </div>
-
+    <!-- Stats Row -->
+    <div class="stats-section" aria-label="Key statistics">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Jurisdictions Covered</span>
         </div>
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Clients Served</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Years of Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Client Satisfaction</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Contact Form Section -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <h2 class="section-title" style="color: #fff;">Book a Consultation</h2>
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="jurisdiction">Primary Jurisdiction of Inquiry</label>
-                    <select id="jurisdiction">
-                        <option>United Kingdom</option>
-                        <option>Australia</option>
-                        <option>Sri Lanka</option>
-                        <option>Multi-Jurisdictional / Cross-Border</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">How can our tax team assist you?</label>
-                    <textarea id="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Submit Consultation Request</button>
-            </form>
+    <!-- Services Section -->
+    <section class="section section-light" aria-labelledby="services-heading">
+      <div class="container">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title" id="services-heading">Our Specialist Services</h2>
+        <p class="section-subtitle">From compliance to complex cross-border structuring, we deliver clarity and confidence across every jurisdiction.</p>
+
+        <div class="services-grid">
+
+          <!-- Card 1 -->
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
+                 alt="Business tax and accounting services" class="card-img" loading="lazy" />
+            <div class="card-body">
+              <h3>Tax &amp; Accounting for Businesses</h3>
+              <p>Financial statements, bookkeeping, payroll processing, and statutory returns across the UK, Australia, and Sri Lanka.</p>
+              <a href="business-tax.html" class="learn-more">Learn more <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+                 alt="Cross-border tax advice for UK, Australia and Sri Lanka" class="card-img" loading="lazy" />
+            <div class="card-body">
+              <h3>UK, AUS &amp; Sri Lanka Cross-Border Advice</h3>
+              <p>Navigating tax treaties and double-taxation agreements for individuals, businesses, trusts, and estates across three jurisdictions.</p>
+              <a href="cross-border.html" class="learn-more">Learn more <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+                 alt="Sri Lanka and UK resident tax advice" class="card-img" loading="lazy" />
+            <div class="card-body">
+              <h3>Sri Lanka &amp; UK Tax Advice</h3>
+              <p>Specialist advice for UK and Sri Lankan residents, non-domiciled individuals, and expats — wherever life has taken you.</p>
+              <a href="uk-sl-advice.html" class="learn-more">Learn more <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=800&q=80"
+                 alt="Multi-jurisdiction tax return filing" class="card-img" loading="lazy" />
+            <div class="card-body">
+              <h3>Multi-Jurisdiction Tax Returns</h3>
+              <p>Seamless preparation and lodgement of statutory returns with HMRC, the ATO, and Sri Lanka's Inland Revenue Department.</p>
+              <a href="tax-returns.html" class="learn-more">Learn more <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2026 LGTFA Ltd - Tax Experts. All Rights Reserved.
-    </footer>
-<script src="//code.tidio.co/pkichkzzd2dqltj3ydbojvv5nbvk9nml.js" async></script>
+    <!-- Contact Section -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="contact-grid">
+
+        <!-- Left: Info -->
+        <div class="contact-info">
+          <h2 id="contact-heading">Let's Talk About Your Tax Position</h2>
+          <p>Whether you're an individual living across borders, a growing business, or an expat unsure of your obligations — our team is ready to help.</p>
+
+          <div class="contact-detail">
+            <span class="contact-icon" aria-hidden="true">📍</span>
+            <div>
+              <strong>Offices</strong>
+              London, UK &nbsp;&middot;&nbsp; Colombo, Sri Lanka
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-icon" aria-hidden="true">📧</span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:info@ledgerlyglobal.com" style="color:#8faac5;">info@ledgerlyglobal.com</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-icon" aria-hidden="true">⏱️</span>
+            <div>
+              <strong>Response Time</strong>
+              Within 1 business day
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-form-card">
+          <form action="#" method="post" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first_name" placeholder="Jane" required autocomplete="given-name" />
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last_name" placeholder="Smith" required autocomplete="family-name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="jurisdiction">Primary Jurisdiction of Inquiry</label>
+              <select id="jurisdiction" name="jurisdiction" required>
+                <option value="" disabled selected>Select a jurisdiction…</option>
+                <option value="uk">United Kingdom</option>
+                <option value="aus">Australia</option>
+                <option value="sl">Sri Lanka</option>
+                <option value="multi">Multi-Jurisdictional / Cross-Border</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">How can our tax team assist you?</label>
+              <textarea id="message" name="message" rows="5" placeholder="Briefly describe your situation…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">Submit Consultation Request</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Ledgerly Global - Home">
+          Ledgerly Global
+          <span class="logo-accent">Tax &amp; Finance Advisory</span>
+        </a>
+        <p>Cross-border tax clarity for individuals, businesses, and expats — across the UK, Australia, and Sri Lanka.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="business-tax.html">Business Tax</a></li>
+          <li><a href="cross-border.html">Cross-Border Advice</a></li>
+          <li><a href="uk-sl-advice.html">UK &amp; Sri Lanka Tax</a></li>
+          <li><a href="tax-returns.html">Tax Returns</a></li>
+          <li><a href="Payroll.html">Payroll Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Compliance</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 LGTFA Ltd. All Rights Reserved. &nbsp;|&nbsp;
+      Registered in England &amp; Wales &nbsp;|&nbsp;
+      <a href="mailto:info@ledgerlyglobal.com" style="color:#4a5a6a;">info@ledgerlyglobal.com</a>
+    </div>
+  </footer>
+
+  <!-- Hamburger Menu Script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mainNav   = document.getElementById('main-nav');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close nav when a link is clicked (mobile UX)
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+  <!-- Live Chat -->
+  <script src="//code.tidio.co/pkichkzzd2dqltj3ydbojvv5nbvk9nml.js" async></script>
+
 </body>
 </html>
