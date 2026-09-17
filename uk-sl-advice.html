@@ -1,99 +1,1221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UK and Sri Lanka Tax Advice | ABC Ltd</title>
-    <style>
-        :root {
-            --primary: #0f2c59;
-            --secondary: #d4af37;
-            --text-dark: #222222;
-            --text-muted: #555555;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
+  <!-- SEO Meta -->
+  <title>UK & Sri Lanka Tax Advice | Ledgerly Global</title>
+  <meta name="description" content="LGTFA Ltd provides specialist UK and Sri Lanka tax advice for expats, dual-residents, and individuals navigating both tax systems — covering DTAs, residency, CGT, and wealth repatriation." />
+  <meta name="robots" content="index, follow" />
 
-        body {
-            background-color: #fff;
-            color: var(--text-dark);
-            line-height: 1.6;
-            padding: 3rem 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+  <!-- Open Graph -->
+  <meta property="og:title" content="UK & Sri Lanka Tax Advice | Ledgerly Global" />
+  <meta property="og:description" content="Expert tax advisory for individuals and businesses navigating the UK and Sri Lanka tax systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ledgerlyglobal.com/uk-sl-advice.html" />
 
-        h1 {
-            color: var(--primary);
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
+  <link rel="canonical" href="https://www.ledgerlyglobal.com/uk-sl-advice.html" />
 
-        p.lead {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-        .section-block {
-            margin-bottom: 2rem;
-        }
+  <style>
+    /* =============================================
+       DESIGN TOKENS
+    ============================================= */
+    :root {
+      --primary:        #0f2c59;
+      --primary-dark:   #081a35;
+      --secondary:      #d4af37;
+      --secondary-dark: #b89528;
+      --light-bg:       #f4f6f9;
+      --text-dark:      #1a1a2e;
+      --text-light:     #555e6d;
+      --white:          #ffffff;
+      --radius:         8px;
+      --shadow-sm:      0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md:      0 6px 20px rgba(0,0,0,0.10);
+      --transition:     0.3s ease;
+      --max-width:      1200px;
+    }
 
-        h3 {
-            color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-        }
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        ul {
-            list-style-type: square;
-            margin-left: 1.5rem;
-            color: var(--text-muted);
-        }
+    html { scroll-behavior: smooth; }
 
-        li {
-            margin-bottom: 0.6rem;
-        }
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-dark);
+      line-height: 1.7;
+      background-color: var(--white);
+    }
 
-        a.back-btn {
-            display: inline-block;
-            margin-top: 2.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            border: 1px solid var(--primary);
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-        }
+    :focus-visible {
+      outline: 3px solid var(--secondary);
+      outline-offset: 3px;
+    }
 
-        a.back-btn:hover {
-            background-color: var(--primary);
-            color: #fff;
-        }
-    </style>
+    img { display: block; max-width: 100%; }
+
+    /* =============================================
+       SKIP LINK
+    ============================================= */
+    .skip-link {
+      position: absolute;
+      top: -50px;
+      left: 1rem;
+      background: var(--secondary);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      z-index: 9999;
+      transition: top var(--transition);
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* =============================================
+       TRUST BAR
+    ============================================= */
+    .trust-bar {
+      background-color: var(--primary-dark);
+      color: #a8b8cc;
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 0.45rem 1rem;
+      letter-spacing: 0.4px;
+    }
+    .trust-bar strong { color: var(--secondary); }
+
+    /* =============================================
+       HEADER & NAV
+    ============================================= */
+    header {
+      background-color: var(--white);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      line-height: 1.2;
+    }
+    .logo .logo-accent {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: var(--secondary);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 0.9rem;
+      position: relative;
+      padding-bottom: 2px;
+      transition: color var(--transition);
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 2px;
+      background-color: var(--secondary);
+      transition: width var(--transition);
+    }
+    nav a:hover { color: var(--primary); }
+    nav a:hover::after { width: 100%; }
+
+    nav a.active {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    nav a.active::after { width: 100%; }
+
+    .nav-cta {
+      background-color: var(--secondary);
+      color: var(--white) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius);
+      font-weight: 600 !important;
+      transition: background var(--transition) !important;
+    }
+    .nav-cta:hover { background-color: var(--secondary-dark) !important; }
+    .nav-cta::after { display: none !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background-color: var(--primary);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* =============================================
+       PAGE HERO
+    ============================================= */
+    .page-hero {
+      background:
+        linear-gradient(rgba(10, 30, 65, 0.87), rgba(10, 30, 65, 0.87)),
+        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80')
+        center / cover no-repeat;
+      color: var(--white);
+      padding: 5.5rem 2rem;
+      text-align: center;
+    }
+
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1rem;
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .breadcrumb a:hover { color: var(--secondary); }
+    .breadcrumb span { color: var(--secondary); }
+
+    .page-hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      border: 1px solid rgba(212,175,55,0.4);
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.1rem;
+      letter-spacing: -0.5px;
+    }
+
+    .page-hero p {
+      font-size: 1.05rem;
+      color: #c5d5e8;
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* Hero flag row */
+    .hero-flags {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      font-size: 2.2rem;
+    }
+    .hero-flags .flag-divider {
+      font-size: 1.2rem;
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    /* =============================================
+       LAYOUT
+    ============================================= */
+    .section { padding: 5rem 2rem; }
+    .section-light { background-color: var(--light-bg); }
+    .container { max-width: var(--max-width); margin: 0 auto; }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    /* =============================================
+       MAIN CONTENT
+    ============================================= */
+    .section-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 0.6rem;
+    }
+
+    .content-main h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      letter-spacing: -0.3px;
+      line-height: 1.3;
+    }
+
+    .content-main .lead {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--secondary);
+      padding-left: 1.1rem;
+    }
+
+    .content-main p {
+      font-size: 0.97rem;
+      color: var(--text-light);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+
+    .sub-heading {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 2.5rem 0 1.2rem;
+      letter-spacing: -0.2px;
+    }
+
+    /* =============================================
+       SERVICE CARDS
+    ============================================= */
+    .service-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 2.5rem 0;
+    }
+
+    .service-detail-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border-top: 3px solid var(--secondary);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .service-detail-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+
+    .service-detail-card h3 {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .service-detail-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* =============================================
+       ★ DUAL-COUNTRY COMPARISON — unique to this page
+    ============================================= */
+    .dual-country {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 2.5rem 0;
+    }
+
+    .country-column {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .country-header {
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .country-header.uk   { background-color: #003078; }
+    .country-header.sl   { background-color: #8d1a1a; }
+
+    .country-flag { font-size: 1.6rem; }
+
+    .country-header h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0;
+    }
+    .country-header p {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      margin: 0;
+    }
+
+    .country-body {
+      background: var(--white);
+      padding: 1.2rem 1.4rem;
+    }
+
+    .country-body ul {
+      list-style: none;
+    }
+    .country-body ul li {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f0f2f5;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.5;
+    }
+    .country-body ul li:last-child { border-bottom: none; }
+    .country-body ul li::before {
+      content: '•';
+      color: var(--secondary);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* =============================================
+       DTA HIGHLIGHT BOX
+    ============================================= */
+    .highlight-box {
+      background: linear-gradient(135deg, var(--primary) 0%, #1a4480 100%);
+      border-radius: var(--radius);
+      padding: 2rem 2.5rem;
+      margin: 2.5rem 0;
+      color: var(--white);
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .highlight-box-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .highlight-box h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+    .highlight-box p {
+      font-size: 0.9rem;
+      color: #c5d5e8;
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    /* =============================================
+       AUDIENCE STRIP
+    ============================================= */
+    .audience-strip {
+      background: var(--light-bg);
+      border-radius: var(--radius);
+      padding: 1.8rem 2rem;
+      margin: 2rem 0;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .audience-strip h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .audience-strip ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1.5rem;
+    }
+
+    .audience-strip ul li {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .audience-strip ul li::before {
+      content: '✓';
+      color: var(--secondary);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* =============================================
+       SIDEBAR
+    ============================================= */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .sidebar-cta {
+      background: var(--primary);
+      border-radius: var(--radius);
+      padding: 2rem;
+      color: var(--white);
+      text-align: center;
+    }
+    .sidebar-cta h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .sidebar-cta p {
+      font-size: 0.87rem;
+      color: #8faac5;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .jurisdiction-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .badge {
+      background: rgba(212,175,55,0.15);
+      border: 1px solid rgba(212,175,55,0.35);
+      color: var(--secondary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background var(--transition), transform 0.15s ease,
+                  box-shadow var(--transition);
+      text-align: center;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+    }
+    .btn-primary { background-color: var(--secondary); color: var(--white); }
+    .btn-primary:hover { background-color: var(--secondary-dark); }
+    .btn-block { display: block; width: 100%; }
+
+    .sidebar-links {
+      background: var(--light-bg);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .sidebar-links h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    .sidebar-links ul { list-style: none; }
+    .sidebar-links ul li {
+      border-bottom: 1px solid #e5e8ed;
+      padding: 0.6rem 0;
+    }
+    .sidebar-links ul li:last-child { border-bottom: none; }
+    .sidebar-links ul li a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color var(--transition);
+    }
+    .sidebar-links ul li a:hover { color: var(--secondary); }
+    .sidebar-links ul li a::before {
+      content: '→';
+      color: var(--secondary);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .sidebar-contact {
+      background: var(--white);
+      border: 1px solid #e5e8ed;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .sidebar-contact h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.87rem;
+      color: var(--text-light);
+    }
+    .contact-item:last-child { margin-bottom: 0; }
+    .contact-item strong {
+      display: block;
+      color: var(--text-dark);
+      font-size: 0.82rem;
+      margin-bottom: 1px;
+    }
+
+    /* =============================================
+       QUICK FACTS SIDEBAR CARD — unique to this page
+    ============================================= */
+    .quick-facts {
+      background: var(--white);
+      border: 1px solid #e5e8ed;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .quick-facts h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    .fact-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #f0f2f5;
+      font-size: 0.85rem;
+    }
+    .fact-item:last-child { border-bottom: none; }
+    .fact-label { color: var(--text-light); }
+    .fact-value {
+      font-weight: 700;
+      color: var(--primary);
+      text-align: right;
+    }
+
+    /* =============================================
+       PROCESS STRIP
+    ============================================= */
+    .process-section {
+      background-color: var(--primary);
+      padding: 4.5rem 2rem;
+    }
+
+    .process-section .section-label {
+      text-align: center;
+      display: block;
+      color: rgba(212,175,55,0.7);
+    }
+
+    .process-section h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + 1rem);
+      right: calc(12.5% + 1rem);
+      height: 2px;
+      background: rgba(212,175,55,0.25);
+    }
+
+    .step { text-align: center; position: relative; }
+
+    .step-number {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--secondary);
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .step p {
+      font-size: 0.83rem;
+      color: #7a99b8;
+      line-height: 1.7;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer { background-color: var(--primary-dark); }
+
+    .footer-top {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3.5rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .footer-brand .logo { display: inline-block; margin-bottom: 1rem; }
+    .footer-brand p {
+      color: #6b7f96;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 1.1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a {
+      color: #6b7f96;
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      padding: 1.4rem 2rem;
+      color: #4a5a6a;
+      font-size: 0.82rem;
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1024px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .sidebar { display: grid; grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .process-steps::before { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      nav {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--white);
+        box-shadow: var(--shadow-md);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition);
+      }
+      nav.open { max-height: 500px; }
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 2rem;
+      }
+      nav ul li {
+        border-bottom: 1px solid #f0f0f0;
+        padding: 0.7rem 0;
+        width: 100%;
+      }
+      nav ul li:last-child { border-bottom: none; }
+      .service-cards    { grid-template-columns: 1fr; }
+      .dual-country     { grid-template-columns: 1fr; }
+      .audience-strip ul { grid-template-columns: 1fr; }
+      .highlight-box    { flex-direction: column; gap: 1rem; }
+      .sidebar          { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 576px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-    <h1>UK and Sri Lanka Tax Advice</h1>
-    <p class="lead">ABC Ltd provides dedicated tax advisory for individuals, dual-residents, and enterprises navigating the tax systems of both the United Kingdom and Sri Lanka.</p>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <div class="section-block">
-        <h3>Core Advisory Areas</h3>
+  <!-- Trust Bar -->
+  <div class="trust-bar" role="banner">
+    <strong>Specialist Tax Advisors</strong> &nbsp;|&nbsp; UK &middot; Australia &middot; Sri Lanka
+    &nbsp;|&nbsp; HMRC Registered &nbsp;&middot;&nbsp; IRD Compliant &nbsp;&middot;&nbsp; ATO Recognised
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo" aria-label="Ledgerly Global - Home">
+        Ledgerly Global
+        <span class="logo-accent">Tax &amp; Finance Advisory</span>
+      </a>
+      <button class="hamburger" id="hamburger"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
         <ul>
-            <li><strong>UK-Sri Lanka Double Tax Agreement (DTA):</strong> Applying treaty benefits to prevent dual taxation on dividends, pensions, employment income, and foreign direct investment.</li>
-            <li><strong>Residency & Non-Domicile Structuring:</strong> Guiding expats and dual-nationals on Statutory Residence Tests (SRT) in the UK and Inland Revenue Department (IRD) residence criteria in Sri Lanka.</li>
-            <li><strong>Property & Asset Disposal:</strong> Capital Gains Tax (CGT) optimization and reporting for residential and commercial real estate held across both countries.</li>
-            <li><strong>Repatriation of Wealth:</strong> Structuring compliant capital flows, fund transfers, and foreign currency account management between the UK and Sri Lanka.</li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="business-tax.html">Business &amp; Finance</a></li>
+          <li><a href="sl-tax.html">Sri Lanka Tax</a></li>
+          <li><a href="uk-sl-advice.html" class="active">UK Tax Advice</a></li>
+          <li><a href="Payroll.html">Payroll</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Consult Now</a></li>
         </ul>
+      </nav>
     </div>
+  </header>
 
-    <a href="index.html" class="back-btn">&larr; Back to Home</a>
+  <main id="main-content">
+
+    <!-- Page Hero -->
+    <section class="page-hero" aria-label="Page hero">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> &nbsp;/&nbsp;
+        <a href="index.html#services">Services</a> &nbsp;/&nbsp;
+        <span>UK &amp; Sri Lanka Tax Advice</span>
+      </nav>
+      <span class="page-hero-eyebrow">Bilateral Tax Advisory</span>
+      <h1>UK &amp; Sri Lanka<br>Tax Advice</h1>
+      <p>Specialist advisory for individuals, dual-residents, and businesses navigating the tax systems of both the United Kingdom and Sri Lanka — from DTA structuring to wealth repatriation.</p>
+      <!-- Flag visual — unique to this page -->
+      <div class="hero-flags" aria-hidden="true">
+        <span>🇬🇧</span>
+        <span class="flag-divider">⟷</span>
+        <span>🇱🇰</span>
+      </div>
+    </section>
+
+    <!-- Main Content + Sidebar -->
+    <section class="section" aria-labelledby="content-heading">
+      <div class="container">
+        <div class="content-layout">
+
+          <!-- ── Main Content ── -->
+          <article class="content-main">
+            <span class="section-label">Our Expertise</span>
+            <h2 id="content-heading">Navigating Two Tax Systems With Confidence</h2>
+
+            <p class="lead">
+              The intersection of UK and Sri Lankan tax law creates a unique and often complex advisory landscape — one that requires deep knowledge of both HMRC requirements and Sri Lanka's Inland Revenue Department rules, as well as the treaty that governs their interaction.
+            </p>
+
+            <p>
+              LGTFA Ltd provides dedicated tax advisory for individuals, dual-residents, and enterprises navigating both tax systems simultaneously. Whether you're a Sri Lankan national living in the UK, a UK expatriate with assets in Colombo, or a business with operations spanning both countries, we deliver clarity and confidence.
+            </p>
+
+            <!-- DTA Highlight Box -->
+            <div class="highlight-box" role="note">
+              <span class="highlight-box-icon" aria-hidden="true">🤝</span>
+              <div>
+                <h3>The UK–Sri Lanka Double Taxation Agreement</h3>
+                <p>The UK–Sri Lanka DTA determines how income, dividends, pensions, and capital gains are taxed when you have connections to both countries. Correctly applying treaty benefits can significantly reduce your overall tax burden — but requires expert interpretation and timely claims.</p>
+              </div>
+            </div>
+
+            <!-- Service Cards -->
+            <h2 class="sub-heading">Core Advisory Areas</h2>
+            <div class="service-cards">
+
+              <div class="service-detail-card">
+                <div class="card-icon" aria-hidden="true">📄</div>
+                <h3>DTA Relief &amp; Structuring</h3>
+                <p>Applying UK–Sri Lanka treaty benefits to dividends, pensions, employment income, interest, and foreign direct investment to avoid dual taxation.</p>
+              </div>
+
+              <div class="service-detail-card">
+                <div class="card-icon" aria-hidden="true">🌍</div>
+                <h3>Residency &amp; Non-Domicile Structuring</h3>
+                <p>Guiding expats and dual-nationals through the UK Statutory Residence Test (SRT) and IRD residency criteria — with full planning around the tax implications of each status.</p>
+              </div>
+
+              <div class="service-detail-card">
+                <div class="card-icon" aria-hidden="true">🏠</div>
+                <h3>Property &amp; Asset Disposal</h3>
+                <p>Capital Gains Tax (CGT) optimisation and compliance reporting for residential and commercial real estate held in the UK or Sri Lanka.</p>
+              </div>
+
+              <div class="service-detail-card">
+                <div class="card-icon" aria-hidden="true">💰</div>
+                <h3>Wealth Repatriation</h3>
+                <p>Structuring compliant capital flows, fund transfers, and foreign currency account management between the UK and Sri Lanka — tax-efficiently and within regulatory limits.</p>
+              </div>
+
+              <div class="service-detail-card">
+                <div class="card-icon" aria-hidden="true">📊</div>
+                <h3>Income Tax &amp; Self-Assessment</h3>
+                <p>UK Self-Assessment returns and Sri Lanka IRD filings for individuals with dual-country income — employment, rental, investment, and overseas earnings.</p>
+              </div>
+
+              <div class="service-detail-card">
+                <div class="card-icon" aria-hidden="true">🏛️</div>
+                <h3>Inheritance &amp; Estate Planning</h3>
+                <p>Cross-border inheritance tax planning for UK and Sri Lankan estates — including IHT exposure analysis and multi-country asset transfer structuring.</p>
+              </div>
+
+            </div>
+
+            <!-- ★ Dual-Country Comparison — unique to this page -->
+            <h2 class="sub-heading">Your Obligations at a Glance</h2>
+            <div class="dual-country">
+
+              <div class="country-column">
+                <div class="country-header uk">
+                  <span class="country-flag" aria-hidden="true">🇬🇧</span>
+                  <div>
+                    <h3>United Kingdom</h3>
+                    <p>HMRC obligations</p>
+                  </div>
+                </div>
+                <div class="country-body">
+                  <ul>
+                    <li>Self-Assessment income tax returns</li>
+                    <li>Capital Gains Tax on UK &amp; overseas assets</li>
+                    <li>Statutory Residence Test (SRT) determination</li>
+                    <li>Non-dom remittance basis claims</li>
+                    <li>Inheritance Tax (IHT) on worldwide estate</li>
+                    <li>Overseas Workday Relief (OWR) claims</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="country-column">
+                <div class="country-header sl">
+                  <span class="country-flag" aria-hidden="true">🇱🇰</span>
+                  <div>
+                    <h3>Sri Lanka</h3>
+                    <p>IRD obligations</p>
+                  </div>
+                </div>
+                <div class="country-body">
+                  <ul>
+                    <li>Individual income tax return filings</li>
+                    <li>Remittance-based income tax treatment</li>
+                    <li>Property transfer &amp; stamp duty</li>
+                    <li>Withholding tax on dividends &amp; interest</li>
+                    <li>IRD residency status determination</li>
+                    <li>Foreign asset declaration requirements</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Who This Is For -->
+            <h2 class="sub-heading">Who This Service Is For</h2>
+            <div class="audience-strip">
+              <h3>This service is designed for:</h3>
+              <ul>
+                <li>Sri Lankan nationals living or working in the UK</li>
+                <li>UK nationals with assets or income in Sri Lanka</li>
+                <li>Non-domiciled UK residents of Sri Lankan origin</li>
+                <li>Dual-resident individuals with obligations in both countries</li>
+                <li>Businesses incorporated in both the UK and Sri Lanka</li>
+                <li>Individuals repatriating funds between the two countries</li>
+              </ul>
+            </div>
+
+          </article>
+
+          <!-- ── Sidebar ── -->
+          <aside class="sidebar" aria-label="Consultation and related services">
+
+            <!-- CTA -->
+            <div class="sidebar-cta">
+              <h3>Book a UK–Sri Lanka Tax Consultation</h3>
+              <div class="jurisdiction-badges">
+                <span class="badge">🇬🇧 HMRC</span>
+                <span class="badge">🇱🇰 IRD</span>
+                <span class="badge">DTA</span>
+              </div>
+              <p>Speak with a specialist who understands both tax systems — and the treaty that connects them.</p>
+              <a href="index.html#contact" class="btn btn-primary btn-block">Schedule a Consultation</a>
+            </div>
+
+            <!-- ★ Quick Facts — unique to this page -->
+            <div class="quick-facts">
+              <h4>Key Tax Facts</h4>
+              <div class="fact-item">
+                <span class="fact-label">UK Corp Tax Rate</span>
+                <span class="fact-value">25%</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">SL Corp Tax Rate</span>
+                <span class="fact-value">30%</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">UK CGT (higher rate)</span>
+                <span class="fact-value">24%</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">UK IHT Rate</span>
+                <span class="fact-value">40%</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">DTA in force since</span>
+                <span class="fact-value">1980</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">SL VAT Rate</span>
+                <span class="fact-value">18%</span>
+              </div>
+            </div>
+
+            <!-- Related Services -->
+            <div class="sidebar-links">
+              <h4>Related Services</h4>
+              <ul>
+                <li><a href="cross-border.html">Cross-Border Tax Advice</a></li>
+                <li><a href="sl-tax.html">Sri Lanka Tax Advisory</a></li>
+                <li><a href="tax-returns.html">Multi-Jurisdiction Tax Returns</a></li>
+                <li><a href="business-tax.html">Business Tax &amp; Accounting</a></li>
+                <li><a href="Payroll.html">Payroll Services</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="sidebar-contact">
+              <h4>Get in Touch</h4>
+              <div class="contact-item">
+                <span aria-hidden="true">📧</span>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:info@ledgerlyglobal.com"
+                     style="color:var(--text-light); text-decoration:none;">
+                    info@ledgerlyglobal.com
+                  </a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span aria-hidden="true">📍</span>
+                <div>
+                  <strong>Offices</strong>
+                  London, UK &middot; Colombo, Sri Lanka
+                </div>
+              </div>
+              <div class="contact-item">
+                <span aria-hidden="true">⏱️</span>
+                <div>
+                  <strong>Response Time</strong>
+                  Within 1 business day
+                </div>
+              </div>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Strip -->
+    <section class="process-section" aria-labelledby="process-heading">
+      <span class="section-label">Our Process</span>
+      <h2 id="process-heading">How a UK–Sri Lanka Advisory Engagement Works</h2>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number" aria-hidden="true">1</div>
+          <h3>Dual-Country Review</h3>
+          <p>We assess your residency status, income sources, and asset holdings in both the UK and Sri Lanka to map your full tax picture.</p>
+        </div>
+        <div class="step">
+          <div class="step-number" aria-hidden="true">2</div>
+          <h3>DTA Analysis</h3>
+          <p>We identify which treaty provisions apply to your situation and where relief claims, exemptions, or credits can reduce your liability.</p>
+        </div>
+        <div class="step">
+          <div class="step-number" aria-hidden="true">3</div>
+          <h3>Advisory Plan</h3>
+          <p>We deliver a written plan covering your residency position, recommended structuring, and any required disclosures to HMRC or IRD.</p>
+        </div>
+        <div class="step">
+          <div class="step-number" aria-hidden="true">4</div>
+          <h3>Filing &amp; Ongoing Support</h3>
+          <p>We prepare and submit returns in both jurisdictions and provide ongoing advice as your personal or financial situation changes.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Ledgerly Global - Home">
+          Ledgerly Global
+          <span class="logo-accent">Tax &amp; Finance Advisory</span>
+        </a>
+        <p>Cross-border tax clarity for individuals, businesses, and expats — across the UK, Australia, and Sri Lanka.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="business-tax.html">Business Tax</a></li>
+          <li><a href="cross-border.html">Cross-Border Advice</a></li>
+          <li><a href="uk-sl-advice.html">UK &amp; Sri Lanka Tax</a></li>
+          <li><a href="tax-returns.html">Tax Returns</a></li>
+          <li><a href="Payroll.html">Payroll Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Compliance</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 LGTFA Ltd. All Rights Reserved. &nbsp;|&nbsp;
+      Registered in England &amp; Wales &nbsp;|&nbsp;
+      <a href="mailto:info@ledgerlyglobal.com" style="color:#4a5a6a;">
+        info@ledgerlyglobal.com
+      </a>
+    </div>
+  </footer>
+
+  <!-- Hamburger Script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mainNav   = document.getElementById('main-nav');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+  <script src="//code.tidio.co/pkichkzzd2dqltj3ydbojvv5nbvk9nml.js" async></script>
 
 </body>
 </html>
